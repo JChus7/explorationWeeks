@@ -24,6 +24,9 @@
 	<bean id="ControladorUsuarios" class="explorationweeks.pujas.controller.ControladorUsuarios">
 		<property name="service" ref="ServicioUsuarios" />
 	</bean>
+	<bean id="ControladorHealth" class="explorationweeks.pujas.controller.ControladorHealth">
+		
+	</bean>
 
 	<!-- Servicios -->
 	<bean id="ServicioObjetos" class="explorationweeks.pujas.service.ServicioObjetos">
