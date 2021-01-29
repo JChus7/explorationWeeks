@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:util="http://www.springframework.org/schema/util"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx       http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+	   http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+	   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<task:annotation-driven/>
+
+	<!-- Controlador -->
+	<bean id="ControladorObjetos" class="explorationweeks.pujas.controller.ControladorObjetos">
+		<property name="service" ref="ServicioObjetos" />
+	</bean>	
+	<bean id="ControladorPujas" class="explorationweeks.pujas.controller.ControladorPujas">
+		<property name="service" ref="ServicioPujas" />
+	</bean>
+	<bean id="ControladorUsuarios" class="explorationweeks.pujas.controller.ControladorUsuarios">
+		<property name="service" ref="ServicioUsuarios" />
+	</bean>
+
+	<!-- Servicios -->
+	<bean id="ServicioObjetos" class="explorationweeks.pujas.service.ServicioObjetos">
+		<property name="Dao" ref="DaoObjetos" />
+	</bean>
+	<bean id="ServicioPujas" class="explorationweeks.pujas.service.ServicioPujas">
+		<property name="Dao" ref="DaoPujas" />
+	</bean>
+	<bean id="ServicioUsuarios" class="explorationweeks.pujas.service.ServicioUsuarios">
+		<property name="Dao" ref="DaoUsuarios" />
+	</bean>
+	
+	<!-- DAO -->
+	<bean id="DaoObjetos" class="explorationweeks.pujas.dao.DaoObjetos"></bean>	
+	<bean id="DaoPujas" class="explorationweeks.pujas.dao.DaoPujas"></bean>	
+	<bean id="DaoUsuarios" class="explorationweeks.pujas.dao.DaoUsuarios"></bean>
+
+
+</beans>
