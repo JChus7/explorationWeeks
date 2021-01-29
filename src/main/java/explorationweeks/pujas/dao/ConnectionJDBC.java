@@ -8,7 +8,8 @@ public class ConnectionJDBC {
 	private static String db = "pujasdb";
 	private static String login = "Altia";
 	private static String pwd = "%Altia1234";
-	private static String url = "jdbc:mariadb://localhost:3306/" + db + "?user=" + login + "&password=" + pwd;
+	private static String url = "jdbc:mariadb:http://mariadb-explorationweeks.10.225.237.33.nip.io/:3306/" + db
+			+ "?user=" + login + "&password=" + pwd;
 
 	private Connection connection;
 
